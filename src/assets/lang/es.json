@@ -1,3 +1,8 @@
 { 
-    "test":"Hola Mundo"
+    "lang": {
+        "selected":"ES",
+        "es":"Español",
+        "en":"Inglés",
+        "pt":"Portugués"
+    }
 }

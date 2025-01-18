@@ -1,0 +1,72 @@
+.change-language__container {
+    position: relative;
+
+    .toggle__container {
+        display: flex;
+        gap: var(--spacing-xs);
+        align-items: center;
+        height: var(--size-header);
+        width: fit-content;
+        cursor: pointer;
+        padding: 0 var(--spacing-sm);
+        border-radius: var(--radius-full);
+        background-color: var(--fd-color-bg-secondary);
+        border:var(--border-xs) solid var(--fd-color-bg-quaternary);
+        
+        p {
+            color: var(--fd-color-primary);
+        }
+    
+        .rotate-open {
+            transform: rotate(180deg);
+            transition:transform .3s ease-in-out;
+        }
+        
+        .rotate-close {
+            transform: rotate(0deg);
+            transition:transform .3s ease-in-out;
+        }
+    }
+
+    .dropdown__list {
+        position: absolute;
+        right: 0;
+        top: 110%;
+        width:fit-content;
+        background-color: var(--fd-color-bg-secondary);
+        border:var(--border-xs) solid var(--fd-color-bg-quaternary);
+        padding: var(--spacing-xs);
+        border-radius: var(--radius-minimal);
+        z-index: 99;
+        
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-2xs);
+            
+            li {
+                padding: var(--spacing-2xs) var(--spacing-xs);
+                border-radius: var(--radius-0);
+                color: var(--fd-color-primary);
+                cursor: pointer;
+            }
+            li:hover {
+                background-color: var(--fd-color-bg-tertiary);
+            }
+        }
+        .selected {
+            background-color: var(--fd-color-bg-tertiary);
+            border: var(--border-xs) solid var(--fd-color-bg-quaternary);
+        }
+    }
+    
+    .dropdown-open {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        transition: clip-path .3s ease-in-out;
+    }
+    
+    .dropdown-close {
+        clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+        transition: clip-path .3s ease-in-out;
+    }
+}

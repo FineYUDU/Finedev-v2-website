@@ -1,0 +1,54 @@
+<div class="change-language__container transition--bg">
+    <div class="toggle__container" (click)="collapseTranslate()">
+        <p class="
+            font__size--b2 
+            font__weight--medium"
+            > 
+            {{'lang.selected' | language:languageService.GetLang }} 
+        </p>
+    
+        <img
+            width="12"
+            height="12"
+            alt="Icon translate"
+            [ngSrc]="'../../../../assets/theme/'+themeService.GetTheme+'/icon/icon-chevron.svg'" 
+            [ngClass]="{
+                'rotate-open': isDropdownOpen(), 
+                'rotate-close': !isDropdownOpen() 
+            }"
+        >
+    </div>
+
+    <div class="dropdown__list transition--bg"
+        [ngClass]="{
+            'dropdown-open': isDropdownOpen(),
+            'dropdown-close': !isDropdownOpen(),
+        }">
+        <ul>
+            <li class="
+                    font__size--b2 
+                    font__weight--regular" 
+                [ngClass]="{'selected': languageService.GetLang === 'es'}"
+                (click)="languageService.selectLang('es')">
+                {{'lang.es' | language:languageService.GetLang }} 
+            </li>
+            <li class=" 
+                    font__size--b2 
+                    font__weight--regular" 
+                [ngClass]="{'selected': languageService.GetLang === 'en'}"
+                (click)="languageService.selectLang('en')"> 
+                {{'lang.en' | language:languageService.GetLang }} 
+            </li>
+            <!-- <li class=" 
+                    font__size--b2 
+                    font__weight--regular" 
+                [ngClass]="{'selected': languageService.GetLang === 'pt'}"
+                (click)="languageService.selectLang('pt')"> 
+                {{'lang.pt' | language:languageService.GetLang }} 
+            </li> -->
+            
+        </ul>
+
+    </div>
+
+</div>

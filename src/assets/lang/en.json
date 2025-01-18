@@ -1,3 +1,8 @@
 { 
-    "test":"Hello World"
+    "lang": {
+        "selected":"EN",
+        "es":"Spanish",
+        "en":"English",
+        "pt":"Portuguese"
+    }
 }

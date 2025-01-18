@@ -1,0 +1,19 @@
+<div class="theme__container" (click)="themeService.toggleTheme()">
+    <img
+        alt="Icon sun"
+        width="17"
+        height="17"
+        [ngSrc]="'../../../../assets/theme/'+themeService.GetTheme +'/icon/icon-sun.svg'"
+    >
+    <img
+        alt="Icon moon"
+        width="17"
+        height="17"
+        [ngSrc]="'../../../../assets/theme/'+themeService.GetTheme +'/icon/icon-moon.svg'"
+    >
+    <div class="circle" [ngClass]="{
+        'dark'  : themeService.toggle(),
+        'light' : !themeService.toggle()
+        }">
+    </div>
+</div>
