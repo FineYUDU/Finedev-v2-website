@@ -1,0 +1,38 @@
+<img
+    height="55"
+    width="125"
+    [ngSrc]="'../../../../assets/theme/'+themeService.GetTheme+'/logo/logo-isologo.svg'"
+>
+<div class="end__menu">
+    <ul class="menu__container">
+        @for (item of navigationMenu(); track $index) {
+            <li routerLinkActive="selected" [routerLink]="[item.route]">
+                <a class="
+                    font__color--secondary
+                    font__weight--regular
+                    font__size--b2
+                    " 
+                    >
+                    {{ item.text | language:languageService.GetLang }}
+                </a>
+            </li>
+        }
+    </ul>
+
+    <ul class="menu__social-media">
+        @for (item of iconMenu(); track $index) {
+            <a [href]="item.url" target="_blank">
+                <img 
+                    [ngSrc]="'../../../../assets/theme/'+themeService.GetTheme+'/logo/logo-'+item.icon+'.svg'" 
+                    width="23"
+                    height="23"
+                    [alt]="item.icon"
+                >
+            </a>
+        }
+    </ul>
+
+    
+    <fd-change-language-dropdown/>
+
+</div>

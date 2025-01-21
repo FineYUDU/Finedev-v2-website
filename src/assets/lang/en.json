@@ -1,8 +1,16 @@
 { 
     "lang": {
-        "selected":"EN",
+        "selected":"English",
         "es":"Spanish",
         "en":"English",
         "pt":"Portuguese"
+    },
+    "menu":{
+        "about":"About me",
+        "experience":"Experience",
+        "contact":"Contact"
+    },
+    "footer":{
+        "legend":"At the moment"
     }
 }

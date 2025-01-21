@@ -1,5 +1,12 @@
 <div class="change-language__container transition--bg">
+    
     <div class="toggle__container" (click)="collapseTranslate()">
+        <img 
+            width="17"
+            height="17"
+            [ngSrc]="'../../../../assets/theme/'+themeService.GetTheme+'/icon/icon-translate.svg'" 
+            alt="icono lenguaje"
+            >
         <p class="
             font__size--b2 
             font__weight--medium"
@@ -39,14 +46,6 @@
                 (click)="languageService.selectLang('en')"> 
                 {{'lang.en' | language:languageService.GetLang }} 
             </li>
-            <!-- <li class=" 
-                    font__size--b2 
-                    font__weight--regular" 
-                [ngClass]="{'selected': languageService.GetLang === 'pt'}"
-                (click)="languageService.selectLang('pt')"> 
-                {{'lang.pt' | language:languageService.GetLang }} 
-            </li> -->
-            
         </ul>
 
     </div>

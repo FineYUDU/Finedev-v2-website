@@ -8,7 +8,21 @@ export const routes: Routes = [
         children:[
             {
                 path:'about',
+                title:'About',
+                data:{translate:'menu.about'},
                 loadComponent:()=> import('./website/views/about/about.component')
+            },
+            {
+                title:'Experience',
+                data:{translate:'menu.experience'},
+                path:'experience',
+                loadComponent:()=> import('./website/views/experience/experience.component')
+            },
+            {
+                title:'Contact',
+                data:{translate:'menu.contact'},
+                path:'contact',
+                loadComponent:()=> import('./website/views/contact/contact.component')
             },
             { path:'', redirectTo:'about', pathMatch:'full' }
         ]

@@ -1,8 +1,16 @@
 { 
     "lang": {
-        "selected":"ES",
+        "selected":"Español",
         "es":"Español",
         "en":"Inglés",
         "pt":"Portugués"
+    },
+    "menu":{
+        "about":"acerda de mi",
+        "experience":"Experiencia",
+        "contact":"Contacto"
+    },
+    "footer":{
+        "legend":"Actualmente"
     }
 }

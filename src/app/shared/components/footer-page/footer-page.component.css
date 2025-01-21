@@ -1,0 +1,27 @@
+.menu__container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    .selected {
+        font-weight:500;
+        border-bottom: var(--border-lg) solid var(--fd-color-brand-primary);
+        a {
+            color: var(--fd-color-brand-primary);
+        }
+    }
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: var(--spacing-sm);
+        cursor: pointer;
+    }
+}
+.menu__social-media {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+
+    img {
+        cursor: pointer;
+    }
+}
