@@ -36,3 +36,112 @@
     <fd-change-language-dropdown/>
 
 </div>
+
+<section class="hamburger--container">
+    <div class="hamburger" (click)="isMovileMenuCollapse.set(!isMovileMenuCollapse())">
+        <span class="line line--top" [ngClass]="{'collapse': !isMovileMenuCollapse()}"></span>
+        <span class="line line--medium" [ngClass]="{'collapse': !isMovileMenuCollapse()}"></span>
+        <span class="line line--bottom" [ngClass]="{'collapse': !isMovileMenuCollapse()}"></span>
+    </div>
+</section>
+
+<section class="menu__sidebar--movile" 
+    [ngClass]="{'sidebar--is-collapse': isMovileMenuCollapse()}">
+
+    <div class="menu--movile">
+        <p class="
+            font__size--h6    
+            font__color--primary    
+            font__weight--semibold    
+            ">
+            {{ 'menu.nav' | language:languageService.GetLang }}
+        </p>
+        <ul>
+            @for (item of navigationMenu(); track $index) {
+                <li class="item__menu--container">
+                    <a class="item__menu" 
+                        routerLinkActive="is-active"
+                        [routerLink]="[item.route]"
+                        >
+                        <div class="item--container">
+                            <img 
+                                [ngSrc]="'./assets/theme/'+themeService.GetTheme+'/icon/icon-'+item.icon+'.svg'" 
+                                width="23"
+                                height="23"
+                                alt="icon chevron">
+                            <span class="
+                                font__size--h6
+                                font__weight--medium
+                                font__color--secondary
+                                ">
+                                {{ item.text| language:languageService.GetLang }}
+                            </span>
+                        </div>
+                    </a>
+                </li>
+            }
+        </ul>
+
+    </div>
+    
+    <div class="menu--movile">
+        <p class="
+            font__size--h6    
+            font__color--primary    
+            font__weight--semibold    
+            ">
+            {{ 'menu.settings' | language:languageService.GetLang }}
+        </p>
+        <ul>
+            <li class="item__menu--container">
+                <a class="item__menu" 
+                    (click)="isMenuSettingsCollapse.set(!isMenuSettingsCollapse())"
+                    [ngClass]="{'is-active': !isMenuSettingsCollapse()}"
+                    >
+                    <div class="item--container">
+                        <img 
+                            src="../../../../assets/theme/dark/icon/icon-translate.svg" 
+                            width="23"
+                            height="23"
+                            alt="icon chevron">
+                        <span class="
+                            font__size--h6
+                            font__weight--medium
+                            font__color--secondary
+                            ">
+                            {{ 'menu.lang' | language:languageService.GetLang }}
+                        </span>
+                    </div>
+                    <img 
+                        [ngSrc]="'./assets/theme/'+themeService.GetTheme+'/icon/icon-chevron.svg'" 
+                        width="18"
+                        height="18"
+                        class="icon-chevron"
+                        [ngClass]="{'rotate': !isMenuSettingsCollapse()}"
+                        alt="icon chevron">
+                </a>
+                <section class="dropdown" [ngClass]="{'dropdown-is-collapse': isMenuSettingsCollapse()}">
+                    <ul>
+                        @for (item of langsMenu(); track $index) {
+                            <li (click)="languageService.selectLang(item.text)"
+                                class="item--lang"
+                                [ngClass]="{'lang--selected': item.text === languageService.GetLang}"
+                                >
+                                <a class="
+                                    item__menu-dropdown
+                                    font__size--h6
+                                    font__color--secondary
+                                    font__weight--medium
+                                    ">
+                                    <span class="point"></span>
+                                    {{ 'lang.'+item.text | language:languageService.GetLang }}
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </section>
+            </li>
+        </ul>
+
+    </div>
+</section>

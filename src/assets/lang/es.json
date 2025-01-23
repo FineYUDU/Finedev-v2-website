@@ -8,7 +8,10 @@
     "menu":{
         "about":"acerda de mi",
         "experience":"Experiencia",
-        "contact":"Contacto"
+        "contact":"Contacto",
+        "nav":"Navegación",
+        "settings":"Configuración",
+        "lang":"Lenguaje"
     },
     "footer":{
         "legend":"Actualmente"

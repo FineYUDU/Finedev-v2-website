@@ -31,3 +31,171 @@
         }
     }
 }
+
+.hamburger--container {
+    display: none;
+}
+
+.menu__sidebar--movile {
+    display: none;
+}
+
+/* ? Breakpoint SM */
+@media screen and (max-width:460px) {
+    .end__menu {
+        display: none;
+    }
+
+    .hamburger--container {
+        display: block;
+        z-index: 99;
+        .hamburger {
+            position: relative;
+            width: 2.3rem;
+            height: 2rem;
+
+            .line { 
+                position: absolute;
+                display: block;
+                width: 2.3rem;
+                height: .3rem;
+                background-color: var(--fd-color-primary);
+                border-radius: var(--radius-minimal);
+                transition: all .3s ease-in-out;
+            }
+            .line--top { 
+                top: 0;
+            }
+            .line--medium {
+                top: calc(50% - calc(.3rem /2) );
+            }
+            .line--bottom {
+                bottom: 0;
+            }
+
+            .collapse {
+                &.line--top {
+                    top: calc(50% - calc(.3rem /2));
+                    transform: translateY(calc(50% - calc(0.3rem / 2))) rotate(45deg);
+                }
+                &.line--medium {
+                    opacity: 0;
+                }
+                &.line--bottom {
+                    bottom: calc(50% - calc(.3rem /2));
+                    transform: translateY(calc(-50% + calc(0.3rem / 2))) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    .menu__sidebar--movile {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-blocks);
+        position: fixed;
+        width: 19.375rem;
+        z-index: 98;
+        padding: var(--spacing-sm);
+        padding-top: 75px;
+        background-color: var(--fd-color-bg-secondary);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transition: all .3s ease-in-out;
+        
+        &.sidebar--is-collapse {
+            transition: all .3s ease-in-out;
+            right: -100%;
+        }
+
+        .menu--movile {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: var(--spacing-blocks);
+
+            .item__menu--container {
+                overflow: hidden;
+                display: grid;
+                grid-template-columns: 1fr;
+
+                .item__menu {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding:var(--spacing-sm);
+                    border-radius: var(--radius-minimal);
+                    transition: all .3s ease-in-out;
+                    
+                    &.is-active {
+                        background-color: var(--fd-color-bg-tertiary);                    
+                        transition: all .3s ease-in-out;
+                    }
+                }
+                .item--container {
+                    display: flex;
+                    gap: var(--spacing-xs);
+                    align-items: center;
+
+                }
+                .icon-chevron {
+                    transform: rotate(0deg);
+                    transition: all .3s ease-in-out;
+                    
+                    &.rotate {
+                        transform: rotate(180deg);
+                        transition: all .3s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .dropdown {
+            display: grid;
+            grid-template-rows: 1fr;
+            transition: all .3s ease-in-out;
+            
+            &.dropdown-is-collapse {
+                grid-template-rows: 0fr;
+            }
+
+            ul {
+                overflow: hidden;
+                margin-left: var(--spacing-lg);
+
+                .item--lang {
+                    padding: var(--spacing-sm);
+                    border-radius: var(--radius-minimal);
+                    transition: all .3s ease-in-out;
+
+                    a {
+                        display: flex;
+                        gap: var(--spacing-xs);
+                        align-items: center;
+                        
+                        .point {
+                            display: block;
+                            width: .4rem;
+                            height: .4rem;
+                            background-color: var(--fd-color-primary);
+                            border-radius: var(--radius-full);
+                        }
+                    }
+
+                    &.lang--selected {
+                        background-color: var(--fd-color-bg-primary);
+                        transition: all .3s ease-in-out;
+                        a {
+                            color: var(--fd-color-primary);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+    }
+}

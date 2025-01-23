@@ -24,7 +24,7 @@
     @for (item of iconMenu(); track $index) {
         <a [href]="item.url" target="_blank">
             <img 
-                [ngSrc]="'../../../../assets/theme/'+themeService.GetTheme+'/logo/logo-'+item.icon+'.svg'" 
+                [ngSrc]="'./assets/theme/'+themeService.GetTheme+'/logo/logo-'+item.icon+'.svg'" 
                 width="23"
                 height="23"
                 [alt]="item.icon"

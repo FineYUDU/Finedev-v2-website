@@ -10,6 +10,10 @@ import { ChangeLanguageDropdownComponent } from "../change-language-dropdown/cha
 import { RouterModule } from '@angular/router';
 import { IconMenu, NavMenu } from '@shared/interfaces/menu.interfaces';
 
+export interface LangMenu {
+  text:string;
+}
+
 @Component({
   selector: 'fd-navbar-header',
   imports: [
@@ -30,19 +34,32 @@ export class NavbarHeaderComponent {
 
   public themeService = inject( ThemeService );
   public languageService = inject( LanguageService );
+  public isMovileMenuCollapse = signal<boolean>(true);
+  public isMenuSettingsCollapse = signal<boolean>(true);
 
+  public langsMenu = signal<LangMenu[]>([
+    {
+      text:'es'
+    },
+    {
+      text:'en'
+    },
+  ]);
   public navigationMenu = signal<NavMenu[]>([
     {
       text:'menu.about',
       route:'about',
+      icon:'home',
     },
     {
       text:'menu.experience',
       route:'experience',
+      icon:'user',
     },
     {
       text:'menu.contact',
       route:'contact',
+      icon:'email',
     },
   ]);
 

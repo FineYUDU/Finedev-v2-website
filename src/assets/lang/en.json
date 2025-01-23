@@ -8,7 +8,10 @@
     "menu":{
         "about":"About me",
         "experience":"Experience",
-        "contact":"Contact"
+        "contact":"Contact",
+        "nav":"Navigation",
+        "settings":"Settings",
+        "lang":"Language"
     },
     "footer":{
         "legend":"At the moment"
