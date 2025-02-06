@@ -10,19 +10,19 @@ export const routes: Routes = [
                 path:'about',
                 title:'About',
                 data:{translate:'menu.about'},
-                loadComponent:()=> import('./website/views/about/about.component')
+                loadComponent:()=> import('./website/views/about-page/about-page.component')
             },
             {
                 title:'Experience',
                 data:{translate:'menu.experience'},
                 path:'experience',
-                loadComponent:()=> import('./website/views/experience/experience.component')
+                loadComponent:()=> import('./website/views/experience-page/experience-page.component')
             },
             {
                 title:'Contact',
                 data:{translate:'menu.contact'},
                 path:'contact',
-                loadComponent:()=> import('./website/views/contact/contact.component')
+                loadComponent:()=> import('./website/views/contact-page/contact-page.component')
             },
             { path:'', redirectTo:'about', pathMatch:'full' }
         ]
